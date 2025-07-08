@@ -9,16 +9,37 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: rgb(235, 205, 210);
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            flex-direction: column; /* Stack content vertically */
         }
-        header {
+        main {
+            text-align: left; /* Left-align text */
+            max-width: 600px; /* Optional: limit the width of the content */
+            margin-top: 60px; /* Add space below the fixed nav bar */
+        }
+        nav {
             background: #333;
             color: #fff;
             padding: 10px 20px;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed; /* Fix the nav bar at the top */
+            top: 0;
+            width: 100%; /* Make it span the full width */
+            z-index: 1000; /* Ensure it stays above other content */
         }
-        main {
-            padding: 20px;
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
         }
         footer {
             background: #333;
@@ -32,11 +53,27 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#stuff">Stuff</a>
+    </nav>
     <main>
-        <p>This is a basic HTML website. You can add more content here!</p>
+        <section id="about">
+            <h2>Hello, I'm Elaine</h2>
+            <p>I am a first-year PhD student at <a href="https://engineering.nyu.edu/academics/departments/computer-science-and-engineering" target="_blank">
+               NYU Tandon's Department of Computer Science and Engineering</a>, where I am co-advised by <a href="https://www.rosiebellini.com/">Rosie Bellini</a> and <a href="https://damonmccoy.com/">Damon McCoy</a>.</p>
+
+            <button class="redirect-button" onclick="window.open('https://elaineyixinlee.github.io/20250708_CV.pdf', '_blank')">Click Me</button>
+        </section>
+        <section id="research">
+            <h2>Research</h2>
+            <p>This section showcases my research and projects.</p>
+        </section>
+        <section id="stuff">
+            <h2>Stuff</h2>
+            <p>This section contains miscellaneous content.</p>
+        </section>
     </main>
     <footer>
         <p>&copy; 2023 My Website</p>
