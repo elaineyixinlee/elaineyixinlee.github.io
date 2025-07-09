@@ -6,20 +6,22 @@
     <title>My Website</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Garamond, Georgia, serif;
             margin: 0;
             padding: 0;
-            background-color: rgb(235, 205, 210);
+            background-color: rgb(218, 206, 230);
             display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            height: 100vh; /* Full viewport height */
-            flex-direction: column; /* Stack content vertically */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            padding-top: 80px;
         }
         main {
-            text-align: left; /* Left-align text */
-            max-width: 600px; /* Optional: limit the width of the content */
-            margin-top: 60px; /* Add space below the fixed nav bar */
+            text-align: left;
+            max-width: 600px;
+            margin-top: 0;
+            padding-top: 20px;
         }
         nav {
             background: #333;
@@ -28,10 +30,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            position: fixed; /* Fix the nav bar at the top */
+            position: fixed;
             top: 0;
-            width: 100%; /* Make it span the full width */
-            z-index: 1000; /* Ensure it stays above other content */
+            width: 100%;
+            z-index: 1000;
+        }
+        a {
+            color: rgb(76, 62, 91)
         }
         nav a {
             color: #fff;
@@ -46,9 +51,165 @@
             color: #fff;
             text-align: center;
             padding: 10px 20px;
-            position: fixed;
             bottom: 0;
             width: 100%;
+        }
+        section {
+            margin: 20px 0;
+        }
+        button {
+            font: Garamond, Georgia, serif;
+            background-color: rgb(146, 126, 166);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: rgb(120, 100, 140);
+        }
+
+        /* About section layout for desktop */
+        #about {
+            display: flex;
+            flex-direction: row;
+            align-items: center; /* Vertically center children (image and content) */
+            gap: 24px;
+            margin-top: 0;
+            padding-top: 0;
+        }
+        .about-image {
+            flex: 0 0 auto;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            align-self: center;
+        }
+        .about-content {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .about-buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .publication-title {
+            font-weight: bold;
+        }
+
+
+        .publications {
+            margin-top: 25px;
+        }
+
+        /* Games section layout */
+        .game-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .game-thumbnail {
+            flex: 0 0 150px;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-content {
+            flex: 1;
+        }
+
+        .game-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .game-description {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .game-tags {
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Responsive: stack image above text on mobile */
+        @media (max-width: 700px) {
+            body {
+                align-items: center;
+                padding-top: 100px;
+            }
+            main {
+                margin-left: 30px;
+                margin-right: 30px;
+                margin-top: 0;
+                width: 100%;
+                max-width: calc(100% - 60px);
+            }
+            section {
+                margin: 60px 0;
+            }
+            #about {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 0;
+            }
+            .about-content {
+                align-items: center;
+                text-align: center;
+            }
+            .about-image {
+                order: -1;
+                width: 60vw;
+                max-width: 300px;
+                height: auto;
+                margin-bottom: 16px;
+                align-items: center;
+                display: block;
+            }
+            .about-buttons {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                align-items: center;
+            }
+            
+            .game-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .game-thumbnail {
+                width: 200px;
+                height: 200px;
+            }
         }
     </style>
 </head>
@@ -60,21 +221,63 @@
     </nav>
     <main>
         <section id="about">
-            <img src="https://elaineyixinlee.github.io/selfie.jpg" alt="monke">
-            <h2>Hello, I'm Elaine</h2>
-            <p>I am a first-year PhD student at <a href="https://engineering.nyu.edu/academics/departments/computer-science-and-engineering" target="_blank">
-               NYU Tandon's Department of Computer Science and Engineering</a>, where I am co-advised by <a href="https://www.rosiebellini.com/">Rosie Bellini</a> and <a href="https://damonmccoy.com/">Damon McCoy</a>.</p>
-
-            <button class="redirect-button" onclick="window.open('https://elaineyixinlee.github.io/20250708_CV.pdf', '_blank')">CV</button>
-            <button class="email-button" onclick="window.location.href='mailto:elainelee@nyu.edu'">Email Me</button>
+            <img class="about-image" src="headshot.jpg" alt="monke">
+            <div class="about-content">
+                <h2>Hello, I'm Elaine</h2>
+                <p>I am a first-year PhD student at <a href="https://engineering.nyu.edu/academics/departments/computer-science-and-engineering" target="_blank">
+                   NYU Tandon's Department of Computer Science and Engineering</a>, where I am co-advised by <a href="https://www.rosiebellini.com/">Rosie Bellini</a> and <a href="https://damonmccoy.com/">Damon McCoy</a>.</p>
+                <div class="about-buttons">
+                    <button class="redirect-button" onclick="window.open('https://elaineyixinlee.github.io/20250708_CV.pdf', '_blank')">CV</button>
+                    <button class="email-button" onclick="window.location.href='mailto:elainelee@nyu.edu'">Email Me</button>
+                </div>
+            </div>
         </section>
-        <section id="research">
+        <br>
+        <br>
+        <section id="research"></section>
             <h2>Research</h2>
-            <p>This section showcases my research and projects.</p>
+            <p>My research interests are in <strong>privacy</strong>, <strong>security</strong>, and <strong>human-computer interaction</strong>. Using in-depth qualitative and data-driven methods, I hope my research will help preserve people's dignity and autonomy online. My publications include:</p>
+            <div class="publications">
+                <span class="publication-title">Understanding Enforcement Mechanisms in Social Media Community Guidelines</span>
+                <br>
+                Heila Precel, <u>Elaine Lee</u>, Anissa Patel, Ben Klingensmith, Deepak Kumar, Allison McDonald. 32nd ACM Conference on Computer and Communications Security (CCS), 2025 [Submitted]
+            </div>
         </section>
-        <section id="stuff">
-            <h2>Stuff</h2>
-            <p>This section contains miscellaneous content.</p>
+        <br>
+        <br>
+        <section id="Games">
+            <h2>Games</h2>
+            <p>When I was an undergrad at Columbia, I led <strong>CU Game Dev</strong>, a small but mighty community of artists, programmers, and writers. Here is some of my best game development work:</p>
+            
+                        <div class="game-item">
+                <img class="game-thumbnail" src="Alstroemeria.jpeg" alt="Game 1">
+                <div class="game-content">
+                    <div class="game-title">Alstroemeria</div>
+                    <div class="game-description">
+                        The ecosystem in Alstromeria is deteriorating, and the mutated pollen are spilling over to our reality, transforming humans into spirits. It is up to you, an undergrad research assistant, to help find the cure by traveling through Alstroemeria. Play <a href="https://cugamedev.itch.io/alstroemeria" target="_blank">here</a>.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="game-item">
+                <img class="game-thumbnail" src="ttw.png" alt="Game 2">
+                <div class="game-content">
+                    <div class="game-title">Time to Work</div>
+                    <div class="game-description">
+                        What lengths would you go to for a chance to undo your mistakes? This visual novel explores time travel, office jobs, and bargains with all-powerful beings. Play <a href="https://cugamedev.itch.io/time-to-work" target="_blank">here</a>.
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-item">
+                <img class="game-thumbnail" src="catopolis.png" alt="Game 2">
+                <div class="game-content">
+                    <div class="game-title">Catopolis</div>
+                    <div class="game-description">
+                        You are a cat collecting cheeseburger ingredients and avoiding pigeons on New York City rooftops. This is the first game I've ever made by myself. Play <a href="https://cugamedev.itch.io/catopolis" target="_blank">here</a>.
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
