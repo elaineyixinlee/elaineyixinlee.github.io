@@ -35,11 +35,14 @@
             width: 100%;
             z-index: 1000;
         }
-        a {
-            color: rgb(58, 47, 71)
+        h2, p {
+            color: rgb(34, 20, 49);
         }
-        nav a {
-            color: #fff;
+        a {
+            color: rgb(113, 79, 152);
+        }
+        nav a, footer p {
+            color: #ffffffd2;
             text-decoration: none;
             margin: 0 10px;
         }
@@ -48,7 +51,6 @@
         }
         footer {
             background: rgb(76, 62, 91);
-            color: #fff;
             text-align: center;
             padding: 10px 20px;
             bottom: 0;
@@ -58,9 +60,9 @@
             margin: 20px 0;
         }
         button {
-            font: Garamond, Georgia, serif;
+            font-family: Garamond, Georgia, serif;
             background-color: rgb(146, 126, 166);
-            color: white;
+            color: rgba(255, 255, 255, 0.831);
             border: none;
             padding: 10px 20px;
             text-align: center;
@@ -217,15 +219,14 @@
     <nav>
         <a href="#about">About</a>
         <a href="#research">Research</a>
-        <a href="#stuff">Stuff</a>
+        <a href="#games">Games</a>
     </nav>
     <main>
         <section id="about">
-            <img class="about-image" src="https://elaineyixinlee.github.io/headshot.JPG" alt="monke">
+            <img class="about-image" src="https://elaineyixinlee.github.io/headshot.JPG" alt="Me in a blue graduation gown">
             <div class="about-content">
                 <h2>Hello, I'm Elaine</h2>
-                <p>I am a first-year PhD student at <a href="https://engineering.nyu.edu/academics/departments/computer-science-and-engineering" target="_blank">
-                   NYU Tandon's Department of Computer Science and Engineering</a>, where I am co-advised by <a href="https://www.rosiebellini.com/">Rosie Bellini</a> and <a href="https://damonmccoy.com/">Damon McCoy</a>.</p>
+                <p>I am a first-year PhD student at <strong>NYU Tandon's Department of Computer Science and Engineering</strong>, where I am co-advised by <a href="https://www.rosiebellini.com/">Rosie Bellini</a> and <a href="https://damonmccoy.com/">Damon McCoy</a>.</p>
                 <div class="about-buttons">
                     <button class="redirect-button" onclick="window.open('https://elaineyixinlee.github.io/20250708_CV.pdf', '_blank')">CV</button>
                     <button class="email-button" onclick="window.location.href='mailto:elainelee@nyu.edu'">Email Me</button>
@@ -245,12 +246,14 @@
         </section>
         <br>
         <br>
-        <section id="Games">
+        <section id="games">
             <h2>Games</h2>
             <p>When I was an undergrad at Columbia, I led <strong>CU Game Dev</strong>, a small but mighty community of artists, programmers, and writers. Here is some of my best game development work:</p>
             
                         <div class="game-item">
-                <img class="game-thumbnail" src="Alstroemeria.jpeg" alt="Game 1">
+                <a href="https://cugamedev.itch.io/alstroemeria" target="_blank">
+                    <img class="game-thumbnail" src="Alstroemeria.jpeg" alt="Green trees on a turquoise background. Alstroemeria, the title of the game, is displayed.">
+                </a>
                 <div class="game-content">
                     <div class="game-title">Alstroemeria</div>
                     <div class="game-description">
@@ -260,7 +263,9 @@
             </div>
             
             <div class="game-item">
-                <img class="game-thumbnail" src="ttw.png" alt="Game 2">
+                <a href="https://cugamedev.itch.io/time-to-work" target="_blank">
+                    <img class="game-thumbnail" src="ttw.png" alt="Two copies of the same man are pointing fingers at each other. The title of the game, 'Time to Work', is also displayed.">
+                </a>
                 <div class="game-content">
                     <div class="game-title">Time to Work</div>
                     <div class="game-description">
@@ -270,7 +275,9 @@
             </div>
 
             <div class="game-item">
-                <img class="game-thumbnail" src="catopolis.png" alt="Game 2">
+                <a href="https://gorfmcgorf.itch.io/catopolis" target="_blank">
+                    <img class="game-thumbnail" src="catopolis.png" alt="A plump black cat in front a city street background.">
+                </a>
                 <div class="game-content">
                     <div class="game-title">Catopolis</div>
                     <div class="game-description">
@@ -281,7 +288,7 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 My Website</p>
+        <p>Last Updated: 9 July 2025</p>
     </footer>
 </body>
 </html>
